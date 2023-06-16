@@ -1,9 +1,14 @@
 const inputEl = document.querySelector('#validation-input');
-console.log (inputEl);
-inputEl.addEventListener('blur', (event) =>{
-     if (inputEl.value.length == inputEl.dataset.length) {
-        console.log(inputEl.value.length);
-    inputEl.classList.add('invalid');
+
+inputEl.addEventListener('blur', () =>{
+     const inputText = inputEl.value.trim();
+     if (inputText.length === Number(inputEl.dataset.length)) {
+            inputEl.classList.add("valid");
+            inputEl.classList.remove("invalid");
+            
+       }else {
+       inputEl.classList.add("invalid");
+            inputEl.classList.remove("valid");
        }
-       inputEl.classList.add('valid');
+       
 });
